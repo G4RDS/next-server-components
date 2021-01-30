@@ -5,7 +5,9 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "node scripts/build",
+    "dev-bundle": "concurrently \"yarn run dev\" \"yarn run bundler\"",
     "dev": "next",
+    "bundler": "nodemon scripts/build.js",
     "build": "next build",
     "start": "next start",
     "format": "prettier --write ."
@@ -16,12 +18,14 @@
     "@babel/preset-react": "^7.12.10",
     "@babel/register": "^7.12.10",
     "babel-loader": "^8.2.2",
+    "concurrently": "^5.3.0",
     "date-fns": "^2.16.1",
     "excerpts": "^0.0.3",
     "ioredis": "^4.19.4",
     "marked": "^1.2.7",
     "micro-cookie-session": "^2.0.0-beta.1",
     "next": "^10.0.4",
+    "nodemon": "^2.0.7",
     "oauth": "^0.9.15",
     "react": "0.0.0-experimental-3310209d0",
     "react-dom": "0.0.0-experimental-3310209d0",
@@ -39,5 +43,10 @@
     "singleQuote": true,
     "jsxBracketSameLine": false,
     "arrowParens": "avoid"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "libs/*"
+    ]
   }
 }
