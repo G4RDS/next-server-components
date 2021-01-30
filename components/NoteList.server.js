@@ -8,6 +8,8 @@ const endpoint = process.env.ENDPOINT
 export default function NoteList({ searchText }) {
   const notes = fetch(endpoint + '/api/notes').json()
 
+  fetch(endpoint + '/api/sleep/3000');
+
   return notes.length > 0 ? (
     <ul className="notes-list">
       {notes.map(note =>
