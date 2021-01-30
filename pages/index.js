@@ -1,16 +1,10 @@
+import Banner from '../components/Banner.client'
 import Root from '../components/Root.client'
 
 const Index = () => {
   return (
     <div className="container">
-      <div className="banner">
-        <a
-          href="https://vercel.com/blog/everything-about-react-server-components"
-          target="_blank"
-        >
-          Learn more →
-        </a>
-      </div>
+      <Banner />
       <Root />
     </div>
   )
